@@ -1,7 +1,7 @@
-# develop-module-ts
+# puppeteer-with-typescript
 
-- TypeScript でモジュール開発するためのテンプレート
-- `webpack` でビルドし、 `dist/prod.js` として吐き出す
+- Puppeteer、TypeScript、Webpack を組み合わせたモジュール
+- `webpack` でビルドし、 `dist/prod.js` としてバンドルを吐き出す
 
 ---
 
@@ -20,6 +20,7 @@
 |        prettier        |  2.5.1  |
 |       ts-loader        |  9.2.8  |
 |        ts-node         | 10.7.0  |
+|       puppeteer        | 13.5.2  |
 
 ---
 
@@ -28,8 +29,14 @@
 ### ビルド
 
 ```bash
-npm start
+npm build
 ```
 
 - `dist` を削除する
 - `prod` 用にビルドする
+
+### ビルドの実行
+
+```bash
+npm start
+```
