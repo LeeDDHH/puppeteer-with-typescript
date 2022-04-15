@@ -1,0 +1,27 @@
+{
+  "name": "puppeteer-with-typescript",
+  "version": "1.0.0",
+  "description": "Puppeteer with TypeScript & Webpack",
+  "main": "dist/prod.js",
+  "scripts": {
+    "start": "node dist/prod.js",
+    "build": "run-s clean build:webpack",
+    "build:webpack": "webpack-cli --mode=production --config webpack.prod.ts",
+    "clean": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})';"
+  },
+  "author": "DongHeon Lee <niche3600@gmail.com> (https://github.com/leeddhh)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/webpack": "^5.28.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "puppeteer": "^13.5.2",
+    "ts-loader": "^9.2.8",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

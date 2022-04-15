@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["DOM", "ES5", "ES6"],
+    "removeComments": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "ts-node": {
+    //typescriptでwebpackの設定ファイルを作るときに使用
+    "compilerOptions": {
+      "target": "ES5",
+      "module": "CommonJS"
+    }
+  },
+  // "include": ["./**/*.ts"],
+  "exclude": ["node_modules/**/*", ".vscode/**/*"]
+}
