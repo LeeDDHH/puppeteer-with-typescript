@@ -2,7 +2,11 @@
 
 import puppeteer from 'puppeteer';
 
+// import Const from './lib/Const';
+
 const screenShotFromURL = async (url: string) => {
+  // Google Chromeを起動して処理をする場合
+  // const browser = await puppeteer.launch(Const.LAUNCH_GOOGLE_CHROME_PROPS);
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
