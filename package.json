@@ -7,6 +7,7 @@
     "start": "node dist/prod.js",
     "build": "run-s clean build:webpack",
     "build:webpack": "webpack-cli --mode=production --config webpack.prod.ts",
+    "buildStart": "run-s build start",
     "clean": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})';"
   },
   "author": "DongHeon Lee <niche3600@gmail.com> (https://github.com/leeddhh)",

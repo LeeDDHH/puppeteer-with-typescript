@@ -13,7 +13,7 @@ const screenShotFromURL = async (url: string) => {
   // await page.setViewport({ width: 1200, height: 800 });
   await page.goto(url);
   await page.waitForSelector('.gLFyf');
-  await page.type('.gLFyf', 'Puppeteer');
+  await page.type('input.gLFyf', 'Puppeteer');
   await page.screenshot({ path: 'example.png' });
   await browser.close();
 };
