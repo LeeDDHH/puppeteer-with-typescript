@@ -15,6 +15,8 @@ const prod: Configuration = {
   },
   externals: {
     puppeteer: 'require("puppeteer")',
+    path: 'require("path")',
+    fs: 'require("fs")',
   },
 };
 

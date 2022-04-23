@@ -1,5 +1,7 @@
 'use strict';
 
+import path from 'path';
+import fs from 'fs';
 import puppeteer from 'puppeteer';
 
 // import Const from './lib/Const';
@@ -28,4 +30,40 @@ const screenShotFromURL = async (url: string) => {
   await browser.close();
 };
 
-screenShotFromURL('https://www.pixiv.net/ranking.php');
+// screenShotFromURL('https://www.pixiv.net/ranking.php');
+
+const downloadGoogleLogoFromURL = async (url: string) => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url);
+  await page.waitForSelector('img.lnXdpd');
+
+  const image = await page.$('img.lnXdpd');
+
+  console.log(image);
+
+  const src = await image?.getProperty('src');
+
+  console.log(src);
+
+  const targetUrl = await src?.jsonValue();
+  console.log('targetUrl: ' + targetUrl);
+
+  const fileName = (targetUrl as string).split('/').pop();
+  console.log('fileName: ' + fileName);
+
+  const localFileFullPath = path.join(__dirname, fileName as string);
+  console.log('localFileFullPath: ' + localFileFullPath);
+
+  const viewSource = await page.goto(targetUrl as string);
+  fs.writeFile(localFileFullPath, await viewSource.buffer(), (err) => {
+    if (err) {
+      console.log('err: ' + err);
+      return;
+    }
+  });
+
+  await browser.close();
+};
+
+downloadGoogleLogoFromURL('https://www.google.com/');
